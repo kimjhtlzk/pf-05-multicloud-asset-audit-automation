@@ -1,0 +1,4 @@
+﻿CLOUD,PROJECT,PROJECT_ID,USER_NAME,USER_ID,USER_GROUP,PERMISSION,USER_CREATION_TIME,ACCESS_KEY,ACCESS_KEY_CREATION_TIME,LAST_LOGIN,PASSWORD_LAST_CHANGED
+AWS,svc-a-dev,111111111111,example-admin,AIDAEXAMPLE0001,-,ReadOnlyAccess,-,-,-,-,-
+GCP,svc-b-prd,example-project-b,example-sa,100000000000000000001,serviceAccount,roles/viewer,-,-,-,-,-
+TENCENT,svc-c-prd,111111111111,example-ops,example-uin-1,-,QcloudCVMReadOnlyAccess,-,-,-,-,-

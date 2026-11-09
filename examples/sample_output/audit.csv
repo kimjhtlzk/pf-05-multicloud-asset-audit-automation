@@ -1,0 +1,6 @@
+﻿CLOUD,PROJECT,PROJECT_ID,WORKER,ACTION,CATEGORY,TARGET,DETAIL,REGION,ACTION_TIME,CRITICAL
+AWS,svc-a-dev,111111111111,example-admin,CreateAccessKey,KEY,example-user,-,-,2026-01-15 09:30:00,Y
+AWS,svc-a-dev,111111111111,example-admin,AuthorizeSecurityGroupIngress,FIREWALL,sg-0000000001,-,-,2026-01-15 09:30:00,-
+GCP,svc-b-prd,example-project-b,user@example.com,SetIamPolicy,POLICY,projects/example-project-b,-,-,2026-01-15 09:30:00,Y
+TENCENT,svc-c-prd,111111111111,example-ops,TerminateInstances,INSTANCE,ins-000001,-,-,2026-01-15 09:30:00,Y
+TENCENT,svc-c-prd,111111111111,example-ops,StartInstances,INSTANCE,ins-000002,-,-,2026-01-15 09:30:00,-

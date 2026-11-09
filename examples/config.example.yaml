@@ -1,0 +1,31 @@
+# Copy to config.yaml and fill in your own values. config.yaml should stay out of version control.
+timezone: Asia/Seoul
+
+aws:
+  role_name: audit-readonly        # assumed in every account through the standard credential chain
+  regions: [ap-northeast-2]
+  accounts:
+    - { name: svc-a-dev, account_id: "111111111111" }
+
+gcp:
+  projects: ["<PROJECT_ID>"]
+  impersonate_service_account: "sa-name@<PROJECT_ID>.iam.gserviceaccount.com"
+
+tencent:
+  regions: [ap-seoul]
+  accounts:
+    - { name: svc-c-prd, account_id: "<ACCOUNT_ID>", role: "qcs::cam::uin/<ACCOUNT_ID>:roleName/audit-readonly" }
+
+sheets:
+  spreadsheet_id: "<SPREADSHEET_ID>"
+  archive_folder_id: "<DRIVE_FOLDER_ID>"
+  archive_sheets: [AUDIT]
+
+notify:                            # names of environment variables, never the values
+  slack_webhook_env: SLACK_WEBHOOK_URL
+  telegram_token_env: TELEGRAM_BOT_TOKEN
+  telegram_chat_id_env: TELEGRAM_CHAT_ID
+
+unused:
+  exclude_security_group_names: [default]
+  exclude_security_group_prefixes: ["k8s-"]

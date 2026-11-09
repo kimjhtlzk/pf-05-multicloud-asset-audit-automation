@@ -1,0 +1,3 @@
+﻿CLOUD,PROJECT,PROJECT_ID,VPC_NAME,VPC_CIDR,REGION,SUBNET_NAME,SUBNET_CIDR,AZ,SECONDARY_IP_CIDR
+AWS,svc-a-dev,111111111111,demo-vpc,10.0.0.0/16,ap-northeast-2,demo-a,10.0.1.0/24,ap-northeast-2a,-
+TENCENT,svc-c-prd,111111111111,demo-vpc,10.2.0.0/16,ap-seoul,demo-1,10.2.1.0/24,ap-seoul-1,-

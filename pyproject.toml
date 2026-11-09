@@ -1,0 +1,53 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cloud-asset-audit"
+version = "1.0.0"
+description = "Collect assets, permissions, and audit logs from AWS, GCP, and Tencent Cloud into one schema."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Kim JunHyun" }]
+dependencies = ["boto3>=1.35,<2", "PyYAML>=6,<7"]
+
+[project.optional-dependencies]
+gcp = [
+  "google-auth>=2.30,<3",
+  "google-cloud-compute>=1.20,<2",
+  "google-cloud-container>=2.50,<3",
+  "google-cloud-iam>=2.15,<3",
+  "google-cloud-logging>=3.11,<4",
+  "google-cloud-resource-manager>=1.12,<2",
+]
+tencent = ["tencentcloud-sdk-python>=3.0.1200,<4"]
+sheets = ["gspread>=6,<7", "google-api-python-client>=2.140,<3", "google-auth>=2.30,<3"]
+all = ["cloud-asset-audit[gcp,tencent,sheets]"]
+dev = ["pytest==8.3.4", "moto[ec2,iam,sts,elbv2]==5.0.26", "ruff==0.8.4", "mypy==1.14.1", "types-PyYAML==6.0.12.20241230"]
+
+[project.scripts]
+cloud-audit = "cloud_asset_audit.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cloud_asset_audit"]
+
+[tool.ruff]
+line-length = 110
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "S", "C4", "SIM"]
+ignore = ["S101"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S105", "S106"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.mypy]
+python_version = "3.12"
+ignore_missing_imports = true
+files = ["src"]

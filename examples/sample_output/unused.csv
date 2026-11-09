@@ -1,0 +1,4 @@
+﻿CLOUD,PROJECT,PROJECT_ID,RESOURCE_TYPE,RESOURCE,REGION,USE_O_X
+AWS,svc-a-dev,111111111111,IP,(eipalloc-0000000001 / 203.0.113.20),ap-northeast-2,-
+AWS,svc-a-dev,111111111111,DISK,(vol-0000000001 / 100GiB / gp3),ap-northeast-2,-
+GCP,svc-b-prd,example-project-b,FIREWALL,old-allow-rule,global,-

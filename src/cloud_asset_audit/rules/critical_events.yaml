@@ -1,0 +1,21 @@
+# Events that trigger an immediate alert.
+# Groups: permission grants, access key issuance, and stopping or deleting key resources.
+aws:
+  - AttachUserPolicy
+  - CreateAccessKey
+  - StopInstances
+  - TerminateInstances
+  - ModifyInstanceAttribute
+gcp:
+  - SetIamPolicy
+  - CreateServiceAccountKey
+  - v1.compute.instances.stop
+  - v1.compute.instances.delete
+  - v1.compute.instances.setMachineType
+tencent:
+  - AttachUserPolicy
+  - AttachUserPolicies
+  - CreateApiKey
+  - StopInstances
+  - TerminateInstances
+  - ResetInstancesType

@@ -1,0 +1,46 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ReadAssets",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeAddresses",
+        "ec2:DescribeInstanceAttribute",
+        "ec2:DescribeInstanceTypes",
+        "ec2:DescribeInstances",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeVolumes",
+        "ec2:DescribeVpcs",
+        "elasticloadbalancing:DescribeListeners",
+        "elasticloadbalancing:DescribeLoadBalancers",
+        "elasticloadbalancing:DescribeTargetGroups"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ReadIdentity",
+      "Effect": "Allow",
+      "Action": [
+        "iam:GenerateCredentialReport",
+        "iam:GetCredentialReport",
+        "iam:GetGroup",
+        "iam:ListAccessKeys",
+        "iam:ListAttachedGroupPolicies",
+        "iam:ListAttachedUserPolicies",
+        "iam:ListGroups",
+        "iam:ListUserPolicies",
+        "iam:ListUsers"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ReadAuditTrail",
+      "Effect": "Allow",
+      "Action": ["cloudtrail:LookupEvents"],
+      "Resource": "*"
+    }
+  ]
+}
