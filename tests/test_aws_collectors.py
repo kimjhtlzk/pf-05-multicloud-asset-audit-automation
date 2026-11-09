@@ -7,7 +7,6 @@ from cloud_asset_audit.collectors import firewall, iam, instance, loadbalancer, 
 from cloud_asset_audit.config import Account, AwsConfig
 from cloud_asset_audit.providers.aws import AwsProvider
 
-
 POLICY = '{"Version":"2012-10-17","Statement":[{"Effect":"Allow","Action":"s3:ListBucket","Resource":"*"}]}'
 
 
